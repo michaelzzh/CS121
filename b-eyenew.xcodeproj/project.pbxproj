@@ -457,6 +457,7 @@
 				5B4BF12619BA37CD00B22E5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B4BF12719BA37CD00B22E5B /* Build configuration list for PBXNativeTarget "b-eyenewTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +466,7 @@
 				5B4BF12919BA37CD00B22E5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

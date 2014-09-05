@@ -1,8 +1,8 @@
 //
 //  ZZAppDelegate.m
-//  b-eyenew
+//  bullseye
 //
-//  Created by Zehao Zhang on 14-9-5.
+//  Created by Zehao Zhang on 14-9-4.
 //  Copyright (c) 2014年 Zehao Zhang. All rights reserved.
 //
 
