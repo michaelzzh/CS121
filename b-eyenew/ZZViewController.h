@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZZViewController : UIViewController
+@interface ZZViewController : UIViewController <UIAlertViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UISlider *slider;
 
@@ -19,6 +19,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *roundLabel;
 
 -(IBAction)showAlert;
+
+-(IBAction)startOver;
 
 - (IBAction)sliderMoved:(UISlider *)slider;
 

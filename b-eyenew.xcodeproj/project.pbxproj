@@ -21,6 +21,8 @@
 		5B4BF11719BA37CD00B22E5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4BF0F919BA37CD00B22E5B /* UIKit.framework */; };
 		5B4BF11F19BA37CD00B22E5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B4BF11D19BA37CD00B22E5B /* InfoPlist.strings */; };
 		5B4BF12119BA37CD00B22E5B /* b_eyenewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4BF12019BA37CD00B22E5B /* b_eyenewTests.m */; };
+		5B4BF12F19BE2D1F00B22E5B /* ZZAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4BF12E19BE2D1F00B22E5B /* ZZAboutViewController.m */; };
+		5B4BF13319BEAE0600B22E5B /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 5B4BF13219BEAE0600B22E5B /* BullsEye.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		5B4BF11C19BA37CD00B22E5B /* b-eyenewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "b-eyenewTests-Info.plist"; sourceTree = "<group>"; };
 		5B4BF11E19BA37CD00B22E5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5B4BF12019BA37CD00B22E5B /* b_eyenewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = b_eyenewTests.m; sourceTree = "<group>"; };
+		5B4BF12D19BE2D1F00B22E5B /* ZZAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZAboutViewController.h; path = ../ZZAboutViewController.h; sourceTree = "<group>"; };
+		5B4BF12E19BE2D1F00B22E5B /* ZZAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZAboutViewController.m; path = ../ZZAboutViewController.m; sourceTree = "<group>"; };
+		5B4BF13219BEAE0600B22E5B /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,9 @@
 		5B4BF0FB19BA37CD00B22E5B /* b-eyenew */ = {
 			isa = PBXGroup;
 			children = (
+				5B4BF13219BEAE0600B22E5B /* BullsEye.html */,
+				5B4BF12D19BE2D1F00B22E5B /* ZZAboutViewController.h */,
+				5B4BF12E19BE2D1F00B22E5B /* ZZAboutViewController.m */,
 				5B4BF10419BA37CD00B22E5B /* ZZAppDelegate.h */,
 				5B4BF10519BA37CD00B22E5B /* ZZAppDelegate.m */,
 				5B4BF10719BA37CD00B22E5B /* Main.storyboard */,
@@ -200,6 +208,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Zehao Zhang";
 				TargetAttributes = {
+					5B4BF0F119BA37CD00B22E5B = {
+						DevelopmentTeam = QZLU8XDCNK;
+					};
 					5B4BF11219BA37CD00B22E5B = {
 						TestTargetID = 5B4BF0F119BA37CD00B22E5B;
 					};
@@ -230,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4BF10E19BA37CD00B22E5B /* Images.xcassets in Resources */,
+				5B4BF13319BEAE0600B22E5B /* BullsEye.html in Resources */,
 				5B4BF10019BA37CD00B22E5B /* InfoPlist.strings in Resources */,
 				5B4BF10919BA37CD00B22E5B /* Main.storyboard in Resources */,
 			);
@@ -250,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4BF12F19BE2D1F00B22E5B /* ZZAboutViewController.m in Sources */,
 				5B4BF10619BA37CD00B22E5B /* ZZAppDelegate.m in Sources */,
 				5B4BF10219BA37CD00B22E5B /* main.m in Sources */,
 				5B4BF10C19BA37CD00B22E5B /* ZZViewController.m in Sources */,
@@ -377,10 +390,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "b-eyenew/b-eyenew-Prefix.pch";
 				INFOPLIST_FILE = "b-eyenew/b-eyenew-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -390,10 +406,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "b-eyenew/b-eyenew-Prefix.pch";
 				INFOPLIST_FILE = "b-eyenew/b-eyenew-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

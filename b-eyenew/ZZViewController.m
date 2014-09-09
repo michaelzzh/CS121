@@ -21,11 +21,24 @@
     int _round;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES; }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self startNewRound];
+    [self startNewGame];
     [self updateLabels];
+    
+    UIImage *thumbImageNormal = [UIImage imageNamed:@"SliderThumb-Normal"];
+    [self.slider setThumbImage:thumbImageNormal forState:UIControlStateNormal];
+    UIImage *thumbImageHighlighted = [UIImage imageNamed:@"SliderThumb-Highlighted"];
+    [self.slider setThumbImage:thumbImageHighlighted forState:UIControlStateHighlighted];
+    UIImage *trackLeftImage =[[UIImage imageNamed:@"SliderTrackLeft"]
+     resizableImageWithCapInsets:UIEdgeInsetsMake(0, 14, 0, 14)];
+    [self.slider setMinimumTrackImage:trackLeftImage forState:UIControlStateNormal];
+    UIImage *trackRightImage = [[UIImage imageNamed:@"SliderTrackRight"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 14, 0, 14)];
+    [self.slider setMaximumTrackImage:trackRightImage forState:UIControlStateNormal];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -52,11 +65,46 @@
     int points = 100 - difference;
     _score += points;
     _round++;
+    
+    NSString *title;
+    if (difference == 0){
+        title = @"Perfect";
+        points += 100;
+    }else if(difference < 5){
+        title = @"You almost had it";
+        if(difference==1){
+            points += 50;
+        }
+    }else if(difference < 10){
+        title = @"Pretty good";
+    }else{
+        title = @"Not even close...";
+    }
+    
+    _score += points;
     NSString *message = [NSString stringWithFormat: @"You scored %d points", points];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Hello, World!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
     [self startNewRound];
     [self updateLabels];
+}
+
+- (void)startNewGame {
+    _score = 0;
+    _round = 0;
+    [self startNewRound];
+}
+
+- (IBAction)startOver {
+    CATransition *transition = [CATransition animation]; transition.type = kCATransitionFade; transition.duration = 1;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    [self startNewGame];
+    [self updateLabels];
+    [self.view.layer addAnimation:transition forKey:nil];
 }
 
 - (IBAction)sliderMoved:(UISlider *)slider
